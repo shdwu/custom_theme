@@ -1,19 +1,13 @@
 div#main
 	ul.cbp_tmtimeline
-		each item in site.posts.data
+		- var list = site.posts.sort("date","desc")
+		each item in list.data
 			li
-				time.cbp_tmtime(datetime = item.date.format('YYYY-MM-DD hh:mm'))
-					span 4/10/13
-					span 18:30
+				time.cbp_tmtime(datetime = item.date.format("YYYY-MM-DD hh:mm"))
+					span= item.date.format("YY/MM/DD")
+					span= item.date.format("hh:mm")
 				div(class = "cbp_tmicon cbp_tmicon-phone")
 				div(class = "cbp_tmlabel")
-					h2 Ricebean black-eyed pea
-					p.
-						Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber
-						watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish
-						bush tomato ricebean black-eyed pea maize eggplant. Cabbage lentil cucumber chickpea
-						sorrel gram garbanzo plantain lotus root bok choy squash cress potato summer purslane
-						salsify fennel horseradish dulse. Winter purslane garbanzo artichoke broccoli lentil
-						corn okra silver beet celery quandong. Plantain salad beetroot bunya nuts black-eyed
-						pea collard greens radish water spinach gourd chicory prairie turnip avocado sierra
-						leone bologi.
+					h2
+						a(href = item.canonical_path)!= item.title
+					p!= item.content
