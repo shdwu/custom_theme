@@ -1,0 +1,20 @@
+{
+  "name": "custom",
+  "authors": [
+    "shdwu <shdwu91@163.com>"
+  ],
+  "description": "hexo custom theme",
+  "main": "index.pug",
+  "keywords": [
+    "index"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
